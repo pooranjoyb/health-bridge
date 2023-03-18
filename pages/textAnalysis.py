@@ -16,8 +16,7 @@ txt = st.text_area('Enter your Symptoms to Get Started', ''' ''')
 
 user_video = st.file_uploader("Or Upload Your Video describing your Symptoms", type=['mov','mp4'])
 
-temp_name = '_'+''.join(secrets.choice(string.ascii_uppercase + string.digits)
-              for i in range(8))
+temp_name = '_'+''.join(secrets.choice(string.ascii_uppercase + string.digits)for i in range(8))
 
 ### Reading Video from User
 
