@@ -1,4 +1,4 @@
-# Telemedicine Machine Learning Project with Video Input
+# HEALTH BRIDGE
 
 ## Project Overview
 
