@@ -1,6 +1,8 @@
 import streamlit as st
 import secrets, string
 import os
+import moviepy.editor as mp
+import speech_recognition as sr
 
 ##Creating the temp directories
 if not os.path.exists('assets/video'):
@@ -25,3 +27,13 @@ if user_video is not None:
     st.video(video)
     with open('assets/video/temp'+temp_name+'.mp4', "wb") as temp_vid:
         temp_vid.write(video)
+
+    clip = mp.VideoFileClip('assets/video/temp'+temp_name+'.mp4').subclip(0,15)
+    clip.audio.write_audiofile("assets/audio/temp"+temp_name+'.wav', codec='pcm_s16le')
+
+    r = sr.Recognizer()
+    with sr.AudioFile("assets/audio/temp"+temp_name+'.wav') as source:
+        audio_text = r.listen(source)
+        text = r.recognize_google(audio_text, language='en-IN', show_all=True)
+        print('Converting audio transcripts into text ...')
+        print(text)
