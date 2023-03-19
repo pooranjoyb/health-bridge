@@ -1,4 +1,3 @@
-import time
 import streamlit as st
 import secrets, string
 import os
@@ -6,7 +5,7 @@ import spacy
 import moviepy.editor as mp
 import speech_recognition as sr
 
-##Creating the temp directories
+##Creating the temp directories if not present already
 if not os.path.exists('assets/video'):
     os.makedirs('assets/video')
 if not os.path.exists('assets/audio'):
@@ -27,6 +26,7 @@ userText = ""
 GenText = []
 if option == 'Text':
     userText = st.text_area('Enter your Symptoms to Get Started', ''' ''')
+    ##nlp model for generating the nouns
     nlp = spacy.load("en_core_web_sm")
     Nouns=nlp(userText)
     GenText = [token.text for token in Nouns if token.pos_ == "NOUN"]
@@ -43,18 +43,26 @@ elif option == 'Video':
     if user_video is not None:
         video = user_video.read()
         st.video(video)
+        ##Write video to the temp directory
         with open('assets/video/temp'+temp_name+'.mp4', "wb") as temp_vid:
             temp_vid.write(video)
 
-        clip = mp.VideoFileClip('assets/video/temp'+temp_name+'.mp4').subclip(0,3)
+        ##Get the duration of the video
+        clip = mp.VideoFileClip('assets/video/temp'+temp_name+'.mp4')
+        duration = int(clip.duration)
+
+        ##Convert to audio
+        clip = mp.VideoFileClip('assets/video/temp'+temp_name+'.mp4').subclip(0,duration)
         clip.audio.write_audiofile("assets/audio/temp"+temp_name+'.wav', codec='pcm_s16le')
+
 
         r = sr.Recognizer()
         with sr.AudioFile("assets/audio/temp"+temp_name+'.wav') as source:
             audio_text = r.listen(source)
-            genText = r.recognize_google(audio_text, language='en-IN', show_all=True)
+            ##Speech To Text here
+            genText = r.recognize_google(audio_text, language='en-IN')
             print('Converting audio transcripts into text ...')
-            print(GenText)
+            print(genText)
 
 
 if (GenText is not None) or (userText is not None):
