@@ -30,7 +30,7 @@ Once you have installed the dependencies, you can run the application by executi
 ```python
 python -m health-bridge
 ```
-
+__Uses Intels patched scikit learn (scikit-learn-intelex) for optimized performance__
 ## Conclusion
 
 Through this project, we aim to develop a machine learning algorithm that can accurately diagnose patients through telemedicine appointments using video input. By improving the accuracy of virtual diagnoses, we hope to improve patient outcomes and reduce the strain on healthcare systems. The use of speech-to-text technology and NLP techniques to extract information from patient videos has the potential to revolutionize the way telemedicine appointments are conducted and improve the quality of care provided to patients.
