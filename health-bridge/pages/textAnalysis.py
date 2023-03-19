@@ -105,6 +105,7 @@ elif option == 'Video':
 
         clip = mp.VideoFileClip('assets/video/temp'+temp_name+'.mp4').subclip(0,duration)
         clip.audio.write_audiofile("assets/audio/temp"+temp_name+'.wav', codec='pcm_s16le')
+        clip = None
 
         r = sr.Recognizer()
         genText = ""
@@ -126,7 +127,6 @@ if (GenText is not None) or (userText is not None):
     if st.button('Submit Result'):
         disease = pre()
         st.write("You are suffering from:", disease)
-    clip = None
     cleanup('video')
 else:
     st.error('This is an error', icon="🚨")
