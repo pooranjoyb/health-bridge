@@ -1,5 +1,5 @@
 streamlit==1.20.0
 spacy
-speech_recognition
+speechrecognition
 moviepy
 scikit-learn-intelex
