@@ -19,9 +19,6 @@ def cleanup(mode):
     if mode == "video":
         shutil.rmtree("assets/audio")
         shutil.rmtree("assets/video")
-        os.remove("models/predict.csv")
-    else:
-        os.remove("models/predict.csv")
 
 def pre():
     diagonosis_model = pickle.load(open('models/telemedicine_model', 'rb'))
@@ -110,7 +107,6 @@ elif option == 'Video':
         clip = mp.VideoFileClip('assets/video/temp'+temp_name+'.mp4').subclip(0,duration)
         clip.audio.write_audiofile("assets/audio/temp"+temp_name+'.wav', codec='pcm_s16le')
 
-
         r = sr.Recognizer()
         genText = ""
         with sr.AudioFile("assets/audio/temp"+temp_name+'.wav') as source:
@@ -125,14 +121,14 @@ elif option == 'Video':
         common_elements = validate(genText)
         st.write(common_elements)
         generate_csv(common_elements)
-        
-    cleanup('video')
 
 
 if (GenText is not None) or (userText is not None):
     if st.button('Submit Result'):
         disease = pre()
         st.write("You are suffering from:", disease)
+    clip = None
+    cleanup('video')
 else:
     st.error('This is an error', icon="🚨")
 
