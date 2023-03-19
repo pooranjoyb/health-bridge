@@ -1,4 +1,9 @@
-# HEALTH BRIDGE
+# Health Bridge
+
+<img src="./health-bridge/assets/hackathon.png">
+
+## Tap the link below to check the Blog Post
+## [Link to Blog Media for our ML project](https://medium.com/@deysampreet6/health-bridge-a-machine-learning-model-to-predict-diseases-ea336c8b62b9 )
 
 ## Project Overview
 
@@ -31,6 +36,27 @@ Once you have installed the dependencies, you can run the application by executi
 python -m health-bridge
 ```
 __Uses Intels patched scikit learn (scikit-learn-intelex) for optimized performance__
+
 ## Conclusion
 
 Through this project, we aim to develop a machine learning algorithm that can accurately diagnose patients through telemedicine appointments using video input. By improving the accuracy of virtual diagnoses, we hope to improve patient outcomes and reduce the strain on healthcare systems. The use of speech-to-text technology and NLP techniques to extract information from patient videos has the potential to revolutionize the way telemedicine appointments are conducted and improve the quality of care provided to patients. It also enables people with certain disabilities get diagnosed remotely without any help. Our goal during this project is to provide diagnosis of some common diseases remotely without any human supervision.
+
+## 😍 Our Valuable Contributors
+
+Thanks to these wonderful people ✨
+
+<a href="https://github.com/pooranjoyb/health-bridge/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=pooranjoyb/health-bridge" />
+</a>
+
+💙 Happy Contributions !! 💙
+
+
+## 📝 Feedback
+
+If you have any feedback, please reach out to us at  pooranjoy@gmail.com
+
+## 📜 License 
+
+Distributed under the MIT License. 
+[MIT](LICENSE)
