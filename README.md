@@ -1,4 +1,4 @@
-# Health Bridge
+# Health Bridge - Team Techno Devs
 
 <img src="./health-bridge/assets/hackathon.png">
 
@@ -40,6 +40,10 @@ __Uses Intels patched scikit learn (scikit-learn-intelex) for optimized performa
 ## Conclusion
 
 Through this project, we aim to develop a machine learning algorithm that can accurately diagnose patients through telemedicine appointments using video input. By improving the accuracy of virtual diagnoses, we hope to improve patient outcomes and reduce the strain on healthcare systems. The use of speech-to-text technology and NLP techniques to extract information from patient videos has the potential to revolutionize the way telemedicine appointments are conducted and improve the quality of care provided to patients. It also enables people with certain disabilities get diagnosed remotely without any help. Our goal during this project is to provide diagnosis of some common diseases remotely without any human supervision.
+
+# Demonstration of the Project : 
+
+[demonstration.webm](https://user-images.githubusercontent.com/90945182/226211024-d5584ef1-5fe5-4b0d-a9b7-557efa7675e4.webm)
 
 ## 😍 Our Valuable Contributors
 
