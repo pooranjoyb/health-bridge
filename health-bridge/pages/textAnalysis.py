@@ -1,6 +1,8 @@
+import time
 import streamlit as st
 import secrets, string
 import os
+import cv2
 import moviepy.editor as mp
 import speech_recognition as sr
 
@@ -26,24 +28,41 @@ GenText = ""
 if option == 'Text':
     userText = st.text_area('Enter your Symptoms to Get Started', ''' ''')
 elif option == 'Video':
-    user_video = st.file_uploader("Upload Your Video describing your Symptoms", type=['mov','mp4'])
 
-    temp_name = '_'+''.join(secrets.choice(string.ascii_uppercase + string.digits)for i in range(8))
+    videoch = st.selectbox(
+    'Upload Video or Record Live ?',
+    ('Enter your Choice','Upload Video', 'Record Live'))
 
-    ### Reading Video from User
+    st.write('You selected:', videoch)
+    if videoch == 'Record Live':
+        
+        print("Live video code to be inserted")
 
-    if user_video is not None:
-        video = user_video.read()
-        st.video(video)
-        with open('assets/video/temp'+temp_name+'.mp4', "wb") as temp_vid:
-            temp_vid.write(video)
+    elif videoch == 'Upload Video':
+        user_video = st.file_uploader("Upload Your Video describing your Symptoms", type=['mov','mp4'])
 
-        clip = mp.VideoFileClip('assets/video/temp'+temp_name+'.mp4').subclip(0,5)
-        clip.audio.write_audiofile("assets/audio/temp"+temp_name+'.wav', codec='pcm_s16le')
+        temp_name = '_'+''.join(secrets.choice(string.ascii_uppercase + string.digits)for i in range(8))
 
-        r = sr.Recognizer()
-        with sr.AudioFile("assets/audio/temp"+temp_name+'.wav') as source:
-            audio_text = r.listen(source)
-            genText = r.recognize_google(audio_text, language='en-IN', show_all=True)
-            print('Converting audio transcripts into text ...')
-            print(GenText)
+        ### Reading Video from User
+
+        if user_video is not None:
+            video = user_video.read()
+            st.video(video)
+            with open('assets/video/temp'+temp_name+'.mp4', "wb") as temp_vid:
+                temp_vid.write(video)
+
+            clip = mp.VideoFileClip('assets/video/temp'+temp_name+'.mp4').subclip(0,5)
+            clip.audio.write_audiofile("assets/audio/temp"+temp_name+'.wav', codec='pcm_s16le')
+
+            r = sr.Recognizer()
+            with sr.AudioFile("assets/audio/temp"+temp_name+'.wav') as source:
+                audio_text = r.listen(source)
+                genText = r.recognize_google(audio_text, language='en-IN', show_all=True)
+                print('Converting audio transcripts into text ...')
+                print(GenText)
+
+
+if (GenText is not None) or (userText is not None):
+    st.button('Submit')  
+else:
+    st.error('This is an error', icon="🚨")
