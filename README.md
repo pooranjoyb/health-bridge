@@ -15,11 +15,11 @@ We will be using a dataset of patients' symptoms that have been gathered from va
 
 ## Methods
 
-Our approach will be to use speech-to-text technology to convert the patient videos to text data. We will preprocess the text data to extract relevant features and use various NLP techniques to build and train our machine learning model. Then we will be predicting the disease using one of the machine learning algorithms like Naive Bayes, Decision Tree, Random Forest, and K-nearest neighbor (KNN). 
+Our approach will be to use speech-to-text technology to convert the patient videos to text data. We will preprocess the text data to extract relevant features and use various NLP techniques to build and train our machine learning model. Then we will be predicting the disease using one of the machine learning algorithms like Decision Tree, Support Vector Machine (SVM).
 
 ## Results
 
-We will evaluate our model's performance using various metrics such as accuracy, precision, recall, and F1 score. We will also perform cross-validation to ensure that our model is robust and can generalize to new data.
+We will evaluate our model's performance using various metrics such as accuracy, precision and confusion matrix. We will also perform cross-validation to ensure that our model is robust and can generalize to new data.
 
 ## Getting Started
 
