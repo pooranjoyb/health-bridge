@@ -3,3 +3,4 @@ spacy
 speechrecognition
 moviepy
 scikit-learn-intelex
+seaborn
