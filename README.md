@@ -36,11 +36,11 @@ We will evaluate our model's performance using various metrics such as accuracy,
 
 To get started with this application, you will need to have the dependencies installed on your system. You can install the dependencies using pip:
 
-## Installing Dependencies
+### Installing Dependencies
 ```python
 pip install -r requirements.txt
 ```
-
+### Starting the Dev Server
 Once you have installed the dependencies, you can run the application by executing the following command in the root directory 
 
 ```python
