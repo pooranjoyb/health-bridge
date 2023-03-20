@@ -15,8 +15,19 @@ We will be using a dataset of patients' symptoms that have been gathered from va
 
 ## Methods
 
-Our approach will be to use speech-to-text technology to convert the patient videos to text data. We will preprocess the text data to extract relevant features and use various NLP techniques to build and train our machine learning model. Then we will be predicting the disease using one of the machine learning algorithms like Decision Tree, Support Vector Machine (SVM).
+We will first use Natural language Processing to extract the symptoms and then, will be predicting the disease using one of the machine learning algorithms - Logistic Regression, Decision Tree Classifier and Random Forest Classifier.
 
+After throrough analysis of accuracy, we have chosen __Random Forest Classifier__ to train our model.
+
+The process for predicting the disease is as follow: 
+
+- User can enter their symptoms either through text or by uploading their video.
+- If text is entered, the symptoms will be generated using __Natural Language Processing__ and matched with the dataset.
+- If Video is uploaded, symptoms will be identified from that video using __NLP__ which then will be matched with the dataset.
+- Now, the symptoms will be fed to the model, and the output will be predicted.
+- The predicted output will be generated in the Streamlit server.
+
+[Click here to see how we did it 😄](https://github.com/pooranjoyb/health-bridge/blob/master/health-bridge/models/train/model.ipynb)
 ## Results
 
 We will evaluate our model's performance using various metrics such as accuracy, precision and confusion matrix. We will also perform cross-validation to ensure that our model is robust and can generalize to new data.
