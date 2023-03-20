@@ -4,6 +4,7 @@
 
 ## Tap the link below to check the Blog Post
 ## [Link to Blog Media for our ML project](https://medium.com/@deysampreet6/health-bridge-a-machine-learning-model-to-predict-diseases-ea336c8b62b9 )
+## [Click here to view deployment](http://intel-health-bridge.onrender.com/)
 
 ## Project Overview
 
