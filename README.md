@@ -1,8 +1,8 @@
-# Health Bridge - Team Techno Devs
+# Health Bridge - Team Techno Devs ⚡️
 
 <img src="./health-bridge/assets/hackathon.jpg">
 
-## Tap the link below to check the Blog Post
+## This Project is under Intel OneAPI Hackathon 2023  
 ## [Link to Blog Media for our ML project](https://medium.com/@deysampreet6/health-bridge-a-machine-learning-model-to-predict-diseases-ea336c8b62b9 )
 ## [Click here to view deployment](http://intel-health-bridge.onrender.com/)
 
